@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: filestore
+  namespace: filestore
+spec:
+  type: NodePort
+  selector:
+    app: filestore
+  ports:
+    - name: filestore-rest
+      protocol: TCP
+      port: 80
+      nodePort: 32346
+      targetPort: 80
